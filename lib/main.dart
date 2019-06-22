@@ -224,28 +224,22 @@ class instaList extends StatelessWidget {
                               SizedBox(
                                 width: 15.0,
                               ),
-                              Expanded(
-                                child: new TextField(
-                                  decoration: new InputDecoration(
-                                      hintText: "Add a comment ..."),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16.0),
-                                child: new Text(
-                                  "12 days ago",
-                                  style: new TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
+                              new Text("Add a comment ..."),
                             ],
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: new Text(
+                        "12 days ago",
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
                   ]));
   }
 
