@@ -110,22 +110,65 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-
-
-
 }
+
+
 class instaList extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return new ListView.builder(
-    itemCount: 5,
+    itemCount: 18,
     itemBuilder: (BuildContext context, int index) => index == 0? new SizedBox(
       child: _instaStories(),
-      height: deviceSize.height * 0.2,
-    ) : new Column()
-    
+      height: deviceSize.height * 0.19,
+    ) : new Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16.0,16.0,8.0,16.0),
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  new Container(
+                height: 40,
+                width: 40,
+                decoration: new BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: new DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage("https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
+                  )
+                ),
+              ),
+            new SizedBox(width: 10.0,
+            ),
+            new Text("sounish003",
+            style: new TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+                ],
+              )
+        ),
+         new IconButton(
+          icon: Icon(Icons.more_vert),
+          color: Colors.black,
+          iconSize: 20,
+        )
+          ],
+        ),
+        ),
+        ]
+    )
   );
   }
 
@@ -184,7 +227,7 @@ Widget _storiesAll() {
       padding: const EdgeInsets.only(top: 8.0),
       child: new ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 8,
+        itemCount: 18,
         itemBuilder: (BuildContext context, int index) => new Stack(
             alignment: Alignment.bottomRight,
             children: <Widget>[
