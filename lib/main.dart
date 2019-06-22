@@ -113,15 +113,25 @@ class _MyHomePageState extends State<MyHomePage> {
 Widget _instaList() {
   return new ListView.builder(
     itemCount: 5,
-    itemBuilder: (BuildContext context, int index) {
-      
-    },
+    itemBuilder: (BuildContext context, int index) => index == 0? new SizedBox(
+      child: _instaStories(),
+    ) : new Column()
     
   );
 }
 
 Widget _instaStories() {
-  
+  return new Container(
+    margin: const EdgeInsets.all(16.0),
+    child: new Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        
+      ],
+    ),
+    );
 }
 
 
