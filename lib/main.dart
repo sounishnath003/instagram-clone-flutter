@@ -109,162 +109,184 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
   }
-
 }
 
-
 class instaList extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return new ListView.builder(
-    itemCount: 18,
-    itemBuilder: (BuildContext context, int index) => index == 0? new SizedBox(
-      child: _instaStories(),
-      height: deviceSize.height * 0.19,
-    ) : new Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Padding(
-        padding: const EdgeInsets.only(top: 8.0),
-        child: new Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16.0,16.0,8.0,16.0),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Container(
-                height: 40,
-                width: 40,
-                decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: new DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage("https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
-                  )
-                ),
-              ),
-            new SizedBox(width: 10.0,
-            ),
-            new Text("sounish003",
-            style: new TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-            ),
-                ],
+        itemCount: 18,
+        itemBuilder: (BuildContext context, int index) => index == 0
+            ? new SizedBox(
+                child: _instaStories(),
+                height: deviceSize.height * 0.19,
               )
-        ),
-         new IconButton(
-          icon: Icon(Icons.more_vert),
-          color: Colors.black,
-          iconSize: 20,
-        )
-          ],
-        ),
-        ),
-        ]
-    )
-  );
+            : new Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  16.0, 16.0, 8.0, 16.0),
+                              child: new Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  new Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: new BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: new DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image: NetworkImage(
+                                              "https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
+                                        )),
+                                  ),
+                                  new SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  new Text(
+                                    "sounish003",
+                                    style: new TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              )),
+                          new IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.more_vert),
+                            color: Colors.black,
+                            iconSize: 20,
+                          )
+                        ],
+                      ),
+                    ),
+                    new Flexible(
+                      fit: FlexFit.loose,
+                      child: new Image.network(
+                          "https://uploads-ssl.webflow.com/5bff8886c3964a992e90d465/5c047dee758853b7cd07f180_Web%E2%80%94Hero-p-800.png"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          new Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              new Icon(Icons.favorite),
+                              new SizedBox(
+                                width: 15,
+                              ),
+                              new Icon(Icons.message),
+                              new SizedBox(
+                                width: 15,
+                              ),
+                              new Icon(Icons.comment)
+                            ],
+                          ),
+                          new Icon(Icons.bookmark)
+                        ],
+                      ),
+                    ),
+                  ]));
   }
 
-Widget _instaStories() {
-  return new Container( 
-    margin: const EdgeInsets.all(16.0),
-    child: new Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+  Widget _instaStories() {
+    return new Container(
+      margin: const EdgeInsets.all(16.0),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          _topText(),
+          _storiesAll(),
+        ],
+      ),
+    );
+  }
+
+  Widget _topText() {
+    return new Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        _topText(),
-        _storiesAll(),
+        _storiesButton(),
+        _watchAll(),
       ],
-    ),
     );
-}
+  }
 
-Widget _topText() {
-return new Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: <Widget>[
-    _storiesButton(),
-    _watchAll(),
-  ],
-);
-}
-
-
-Widget _storiesButton(){
-  return new Text('Stories',
-    style: new TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 16.0
-    ),
+  Widget _storiesButton() {
+    return new Text(
+      'Stories',
+      style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
     );
-}
+  }
 
-Widget _watchAll(){
-  return new Row(
+  Widget _watchAll() {
+    return new Row(
       children: <Widget>[
         Icon(Icons.play_arrow),
-        new SizedBox(width: 3.0,),
-        new Text("Watch All",
-        style: new  TextStyle(
-          fontWeight: FontWeight.bold
+        new SizedBox(
+          width: 3.0,
         ),
+        new Text(
+          "Watch All",
+          style: new TextStyle(fontWeight: FontWeight.bold),
         )
       ],
-      );
-}
+    );
+  }
 
-Widget _storiesAll() {
-  return new Expanded(
-    child: Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: new ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 18,
-        itemBuilder: (BuildContext context, int index) => new Stack(
-            alignment: Alignment.bottomRight,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                width: 60.0,
-                height: 60.0,
-                decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage("https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
-                  )
-                ),
+  Widget _storiesAll() {
+    return new Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: new ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 18,
+          itemBuilder: (BuildContext context, int index) => new Stack(
+                alignment: Alignment.bottomRight,
+                children: <Widget>[
+                  new Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                    width: 60.0,
+                    height: 60.0,
+                    decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(
+                              "https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
+                        )),
+                  ),
+                  (index == 0)
+                      ? new Positioned(
+                          right: 11.0,
+                          child: new CircleAvatar(
+                            radius: 12.0,
+                            backgroundColor: Colors.blueAccent,
+                            child: new Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : new Container()
+                ],
               ),
-              (index == 0) ? new Positioned(
-                right: 11.0,
-                child: new CircleAvatar(
-                  radius: 12.0,
-                  backgroundColor: Colors.blueAccent,
-                  child: new Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    ),
-                ),
-              ) : new Container()
-            ],
-          ),
+        ),
       ),
-    ),
-  );
-}
-
-
-
-
-
-
-
+    );
+  }
 }
