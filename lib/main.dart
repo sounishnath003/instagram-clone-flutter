@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         new Flexible(
-          child: _instaList(),
+          child: instaList(),
         )
       ],
     );
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 }
-class _instaList extends StatelessWidget {
+class instaList extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
@@ -180,40 +180,40 @@ Widget _watchAll(){
 
 Widget _storiesAll() {
   return new Expanded(
-    child: new ListView.builder(
-      itemCount: 5,
-      itemBuilder: (BuildContext context, int index) {
-        new Stack(
-          alignment: Alignment.bottomRight,
-          children: <Widget>[
-            new Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8.0),
-              width: 100.0,
-              height: 60.0,
-              child: new Text("hhhh"),
-              decoration: new BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage("https://randomuser.me/api/portraits/men/43.jpg"),
-                )
+    child: Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: new ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 8,
+        itemBuilder: (BuildContext context, int index) => new Stack(
+            alignment: Alignment.bottomRight,
+            children: <Widget>[
+              new Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                width: 60.0,
+                height: 60.0,
+                decoration: new BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage("https://yt3.ggpht.com/-n6_Bu3mtBAk/AAAAAAAAAAI/AAAAAAAAfUA/2bT7qLvk1h8/s88-mo-c-c0xffffffff-rj-k-no/photo.jpg"),
+                  )
+                ),
               ),
-            ),
-            (index == 0) ? new Positioned(
-              right: 10.0,
-              child: new CircleAvatar(
-                radius: 10.0,
-                backgroundColor: Colors.blueAccent,
-                child: new Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  ),
-              ),
-            ) : new Container()
-          ],
-        );
-      },
-      
+              (index == 0) ? new Positioned(
+                right: 11.0,
+                child: new CircleAvatar(
+                  radius: 12.0,
+                  backgroundColor: Colors.blueAccent,
+                  child: new Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    ),
+                ),
+              ) : new Container()
+            ],
+          ),
+      ),
     ),
   );
 }
