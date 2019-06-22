@@ -183,7 +183,7 @@ class instaList extends StatelessWidget {
                           new Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              new Icon(Icons.favorite),
+                              new Icon(Icons.favorite, color: Colors.redAccent,),
                               new SizedBox(
                                 width: 15,
                               ),
@@ -191,13 +191,46 @@ class instaList extends StatelessWidget {
                               new SizedBox(
                                 width: 15,
                               ),
-                              new Icon(Icons.comment)
+                              new Icon(Icons.text_format)
                             ],
                           ),
                           new Icon(Icons.bookmark)
                         ],
                       ),
                     ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: new Text("Liked by backward_space, tilattama banerjee and 564410 more",
+                      style: new TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                      ),
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            new Row(
+                              children: <Widget>[
+                                new CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: NetworkImage("https://avatars0.githubusercontent.com/u/47034394?s=400&v=4"),
+                                ),
+                                SizedBox(width: 15.0,),
+                                TextField(
+                                    decoration: new InputDecoration(
+                                      hintText: "Add a comment",
+                                      border: InputBorder.none
+                                    ),
+                                  ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )
                   ]));
   }
 
