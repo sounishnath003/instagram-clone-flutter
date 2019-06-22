@@ -109,10 +109,43 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
   }
-}
 
 Widget _instaList() {
-  return new Container(
-
+  return new ListView.builder(
+    itemCount: 5,
+    itemBuilder: (BuildContext context, int index) {
+      
+    },
+    
   );
+}
+
+Widget _instaStories() {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
