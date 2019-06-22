@@ -1,6 +1,18 @@
 # instagram_flutter
 
+![s1](s1.jpg)
+![s2](s2.jpg)
+
 A new Flutter project.
+
+# VS Code
+![vscode](Capture.PNG)
+
+# Code Snippet
+![carbon](instagram_flu (1).png)
+
+# 
+
 
 ## Getting Started
 
