@@ -32,6 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
      appBar: _topBar(), 
+     //body: ,
+     bottomNavigationBar: _bottomAppBar(),
     );
   }
 
@@ -39,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 Widget _topBar() {
   return new AppBar(
     title: new SizedBox(
-      height: 35.0,
+      height: 31.0,
       child: Image.asset("./Assets/ins_logo.png"),
     ),
     centerTitle: true,
@@ -54,6 +56,50 @@ Widget _topBar() {
     ],
   );
 }
+
+
+Widget _bottomAppBar() {
+  return new Container(
+    height: 45,
+    color: Colors.white,
+    alignment: Alignment.center,
+    child: new BottomAppBar(
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          new IconButton(
+            onPressed: () {},
+            icon: new Icon(Icons.home),
+          ),
+          new IconButton(
+            onPressed: () {},
+            tooltip: 'search',
+            icon: new Icon(Icons.search),
+          ),
+          new IconButton(
+            onPressed: () {},
+            icon: new Icon(Icons.add_box),
+          ),
+          new IconButton(
+            onPressed: () {},
+            icon: new Icon(Icons.favorite),
+          ),
+          new IconButton(
+            onPressed: () {},
+            icon: new Icon(Icons.account_box),
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+
+
+
+
+
+
 
 
 
